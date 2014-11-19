@@ -1,0 +1,55 @@
+# **************************************************************************** #
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    Makefile                                           :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: erusso <erusso@student.42.fr>              +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2014/11/16 16:29:05 by erusso            #+#    #+#              #
+#    Updated: 2014/11/18 18:24:31 by erusso           ###   ########.fr        #
+#                                                                              #
+# **************************************************************************** #
+
+NAME= get_next_line
+
+SRC= get_next_line.c main.c
+INCLUDES= get_next_line.h
+LIBPATH= libft
+LIB= $(LIBPATH)/libft.a
+
+CFLAGS= -Werror -Wextra -Wall -I $(LIBPATH) -g
+LDFLAGS= -L $(LIBPATH) -lft
+
+OBJ= $(SRC:.c=.o)
+
+.PHONY: all clean fclean re
+
+all: $(LIB) $(NAME)
+
+$(NAME): $(OBJ)
+	gcc $(LDFLAGS) $^ -o $@
+
+%.o: %.c $(INCLUDES)
+	gcc $(CFLAGS) -c $< -o $@
+
+clean:
+	rm $(OBJ)
+
+fclean: clean
+	rm $(NAME)
+
+re: fclean all
+
+$(LIB):
+	make -C $(LIBPATH)
+
+lib: $(LIB)
+
+lib.clean:
+	make -C $(LIBPATH) clean
+
+lib.fclean:
+	make -C $(LIBPATH) fclean
+
+lib.re:
+	make -C $(LIBPATH) re
