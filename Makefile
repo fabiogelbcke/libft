@@ -6,7 +6,7 @@
 #    By: fschuber <fschuber@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2014/11/21 02:01:24 by fschuber          #+#    #+#              #
-#    Updated: 2014/11/21 07:03:03 by fschuber         ###   ########.fr        #
+#    Updated: 2014/11/21 07:58:20 by fschuber         ###   ########.fr        #
 #                                                                              #
 #******************************************************************************#
 
@@ -55,7 +55,12 @@ SRC =	ft_atoi.c \
 		ft_memccpy.c \
 		ft_memmove.c \
 		ft_memchr.c \
-		ft_memcmp.c
+		ft_memcmp.c \
+		ft_memdel.c \
+		ft_strnew.c \
+		ft_strdel.c \
+		ft_strmapi.c \
+		ft_itoa.c
 
 OBJ = $(SRC:.c=.o)
 

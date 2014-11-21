@@ -1,30 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcmp.c                                        :+:      :+:    :+:   */
+/*   ft_strnew.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fschuber <fschuber@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2014/11/21 07:04:12 by fschuber          #+#    #+#             */
-/*   Updated: 2014/11/21 07:17:34 by fschuber         ###   ########.fr       */
+/*   Created: 2014/11/21 07:33:33 by fschuber          #+#    #+#             */
+/*   Updated: 2014/11/21 07:38:18 by fschuber         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include <stdlib.h>
 
-int memcmp(const void *s1, const void *s2, size_t n)
+char *ft_strnew(size_t size)
 {
-	unsigned char *ptr1;
-	unsigned char *ptr2;
+	char *str;
 	int i;
 
+	str = (char*)malloc(((int)size + 1) * sizeof(char));
+	if (!str)
+		return NULL;
 	i = 0;
-	ptr1 = (unsigned char *)s1;
-	ptr2 = (unsigned char *)s2;
-	while (*ptr1 == *ptr2 & i < (int)n)
+	while (i < size)
 	{
-		ptr1++;
-		ptr2++;
+		str[i] = 0;
+		i++;
 	}
-	return *(int*)ptr1 - *(int*)ptr2;
+	str[i] = '\0';
+	return str;
 }

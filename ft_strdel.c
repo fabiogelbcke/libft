@@ -1,30 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcmp.c                                        :+:      :+:    :+:   */
+/*   ft_strdel.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fschuber <fschuber@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2014/11/21 07:04:12 by fschuber          #+#    #+#             */
-/*   Updated: 2014/11/21 07:17:34 by fschuber         ###   ########.fr       */
+/*   Created: 2014/11/21 07:40:06 by fschuber          #+#    #+#             */
+/*   Updated: 2014/11/21 07:41:57 by fschuber         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-
-int memcmp(const void *s1, const void *s2, size_t n)
+void	ft_strdel(char **as)
 {
-	unsigned char *ptr1;
-	unsigned char *ptr2;
-	int i;
-
-	i = 0;
-	ptr1 = (unsigned char *)s1;
-	ptr2 = (unsigned char *)s2;
-	while (*ptr1 == *ptr2 & i < (int)n)
-	{
-		ptr1++;
-		ptr2++;
-	}
-	return *(int*)ptr1 - *(int*)ptr2;
+	if (!as || !*as)
+		return;
+	free(*as);
+	*as = NULL:
 }

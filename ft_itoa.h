@@ -1,30 +1,48 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcmp.c                                        :+:      :+:    :+:   */
+/*   ft_itoa.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fschuber <fschuber@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2014/11/21 07:04:12 by fschuber          #+#    #+#             */
-/*   Updated: 2014/11/21 07:17:34 by fschuber         ###   ########.fr       */
+/*   Created: 2014/11/21 07:58:46 by fschuber          #+#    #+#             */
+/*   Updated: 2014/11/21 08:12:07 by fschuber         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-
-int memcmp(const void *s1, const void *s2, size_t n)
+void	numtostr(char **strptr, int n, int size)
 {
-	unsigned char *ptr1;
-	unsigned char *ptr2;
+	char *str;
 	int i;
 
 	i = 0;
-	ptr1 = (unsigned char *)s1;
-	ptr2 = (unsigned char *)s2;
-	while (*ptr1 == *ptr2 & i < (int)n)
+	str = *strptr;
+	if (n < 0)
+		str[i++] = '-';
+
+}
+
+char	*ft_itoa(int n)
+{
+	char *str;
+	int size;
+	int temp;
+
+	size = 0;
+	temp = n;
+	if (n < 0)
 	{
-		ptr1++;
-		ptr2++;
+		size++;
+		temp = temp * -1;
 	}
-	return *(int*)ptr1 - *(int*)ptr2;
+	while (temp > 0)
+	{
+		temp = temp / 10;
+		size++;
+	}
+	str = (char*)malloc(sizeof(char) * size + 1);
+	if (!str)
+		return NULL;
+	numtostr(&str, n);
+	return str;
 }
