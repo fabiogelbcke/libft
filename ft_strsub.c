@@ -6,12 +6,12 @@
 /*   By: fschuber <fschuber@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/11/19 08:51:25 by fschuber          #+#    #+#             */
-/*   Updated: 2014/11/19 09:07:31 by fschuber         ###   ########.fr       */
+/*   Updated: 2014/11/21 02:48:06 by fschuber         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string.h>
-
+#include "libft.h"
+#include <stdlib.h>
 char *ft_strstub(char const *s, unsigned int start, size_t len)
 {
 	int strlen;
@@ -21,11 +21,11 @@ char *ft_strstub(char const *s, unsigned int start, size_t len)
 	strlen = 0;
 	while (s[strlen])
 		strlen++;
-	if (start + len >= strlen)
+	if ((int)start + (int)len >= strlen)
 		return NULL;
 	sub = malloc(sizeof(char) * (len + 1));
 	i = start;
-	while (i < start + len)
+	while (i < (int)start + (int)len)
 	{
 		sub[i - start] = s[i];
 		i++;

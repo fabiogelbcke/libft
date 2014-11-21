@@ -6,7 +6,7 @@
 /*   By: fschuber <fschuber@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/11/13 13:00:04 by fschuber          #+#    #+#             */
-/*   Updated: 2014/11/13 13:31:02 by fschuber         ###   ########.fr       */
+/*   Updated: 2014/11/21 03:48:27 by fschuber         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ void		*ft_memset(void *b, int c, size_t len)
 
 	str = b;
 	i = 0;
-	while (i < len)
+	while (i < (int)len)
 	{
 		str[i] = c;
 		i++;

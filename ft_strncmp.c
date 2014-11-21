@@ -6,9 +6,11 @@
 /*   By: fschuber <fschuber@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/11/18 04:19:39 by fschuber          #+#    #+#             */
-/*   Updated: 2014/11/18 04:24:28 by fschuber         ###   ########.fr       */
+/*   Updated: 2014/11/21 03:40:33 by fschuber         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 int strncmp(const char *s1, const char *s2, size_t n)
 {
@@ -16,10 +18,10 @@ int strncmp(const char *s1, const char *s2, size_t n)
 	char *ptr2;
 	int i;
 
-	ptr1 = s1;
-	ptr2 = s2;
+	ptr1 = (char*)s1;
+	ptr2 = (char*)s2;
 	i = 0;
-	while(*ptr1 && *ptr2 && i < 0)
+	while(*ptr1 && *ptr2 && i < (int)n)
 	{
 		if (*ptr1 != *ptr2)
 			return ptr1-ptr2;

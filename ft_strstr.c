@@ -6,7 +6,7 @@
 /*   By: fschuber <fschuber@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/11/17 20:50:00 by fschuber          #+#    #+#             */
-/*   Updated: 2014/11/18 03:43:55 by fschuber         ###   ########.fr       */
+/*   Updated: 2014/11/21 02:49:18 by fschuber         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,8 @@ char *strstr(const char *s1, const char *s2)
 	
 	while(*s1)
 	{
-		ptr1 = s1;
-		ptr2 = s2;
+		ptr1 = (char*)s1;
+		ptr2 = (char*)s2;
 		while (*ptr1 != '\0')
 		{
 			if (*ptr1 != *ptr2)
@@ -29,7 +29,7 @@ char *strstr(const char *s1, const char *s2)
 			ptr2++;
 		}
 		if (*ptr1 == '\0')
-			return s1;
+			return (char*)s1;
 		s1++;
 	}
 	return NULL;

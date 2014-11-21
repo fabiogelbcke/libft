@@ -6,21 +6,24 @@
 /*   By: fschuber <fschuber@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/11/17 20:45:38 by fschuber          #+#    #+#             */
-/*   Updated: 2014/11/17 20:49:34 by fschuber         ###   ########.fr       */
+/*   Updated: 2014/11/21 03:04:28 by fschuber         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string.h>
+#include "libft.h"
 
-char * strrchar(const char *s, int c)
+char *ft_strrchr(const char *s, int c)
 {
 	char *ptr;
+	char *ptr2;
 
 	ptr = NULL;
+	ptr2 = (char*)s;
 	while(*s)
 	{
-		if (*s = c)
-			ptr = s;
+		if (*ptr2 == c)
+			ptr = ptr2;
+		ptr2++;
 	}
 	return ptr;
 }

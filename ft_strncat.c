@@ -6,11 +6,11 @@
 /*   By: fschuber <fschuber@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/11/17 19:17:02 by fschuber          #+#    #+#             */
-/*   Updated: 2014/11/17 19:40:34 by fschuber         ###   ########.fr       */
+/*   Updated: 2014/11/21 03:39:40 by fschuber         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string.h>
+#include "libft.h"
 
 char *ft_strncat(char *s1, const char *s2, size_t n)
 {
@@ -21,7 +21,7 @@ char *ft_strncat(char *s1, const char *s2, size_t n)
 	s1ptr = s1;
 	while (*s1ptr)
 		s1ptr++;
-	while (*s2 && i < n)
+	while (*s2 && i < (int)n)
 	{
 		*(s1ptr++) = *(s2++);
 		i++;

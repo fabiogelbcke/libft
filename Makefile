@@ -6,7 +6,7 @@
 #    By: fschuber <fschuber@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2014/11/21 02:01:24 by fschuber          #+#    #+#              #
-#    Updated: 2014/11/21 02:07:02 by fschuber         ###   ########.fr        #
+#    Updated: 2014/11/21 02:33:32 by fschuber         ###   ########.fr        #
 #                                                                              #
 #******************************************************************************#
 
@@ -23,7 +23,7 @@ SRC =	ft_atoi.c \
 		ft_isdigit.c \
 		ft_isprint.c \
 		ft_memalloc.c \
-		ft_memccpy.c \
+		ft_memcpy.c \
 		ft_memset.c \
 		ft_putchar.c \
 		ft_putendl.c \

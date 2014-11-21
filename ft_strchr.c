@@ -6,7 +6,7 @@
 /*   By: fschuber <fschuber@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/11/17 20:07:40 by fschuber          #+#    #+#             */
-/*   Updated: 2014/11/17 20:19:12 by fschuber         ###   ########.fr       */
+/*   Updated: 2014/11/21 03:46:58 by fschuber         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,8 @@ char *strchr(const char *s, int c)
 {
 	while(*s)
 	{
-		if (*s = c)
-			return s;
+		if (*s == c)
+			return (char*)s;
 		s++;
 	}
 	return NULL;

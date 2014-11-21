@@ -6,13 +6,16 @@
 /*   By: fschuber <fschuber@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/11/19 09:22:09 by fschuber          #+#    #+#             */
-/*   Updated: 2014/11/19 09:33:15 by fschuber         ###   ########.fr       */
+/*   Updated: 2014/11/21 02:37:56 by fschuber         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-size_t getlen(char const *s)
+#include "libft.h"
+#include <stdlib.h>
+
+int getlen(char const *s)
 {
-	size_t len;
+	int len;
 	int i;
 
 	len = 0;
@@ -29,16 +32,17 @@ size_t getlen(char const *s)
 		i--;
 		len--;
 	}
-
+	return len;
 }
 
 char *ft_strtrim(char const *s)
 {
 	char *ret;
-	size_t size;
+	int size;
 	int startindex;
 	int i;
 
+	i = 0;
 	size = getlen(s);
 	ret = malloc(sizeof(char) * (size + 1));
 	while(s[i] == ' ' || s[i] == '\t' || s[i] == '\n')

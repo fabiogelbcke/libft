@@ -6,11 +6,12 @@
 /*   By: fschuber <fschuber@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/11/17 18:15:11 by fschuber          #+#    #+#             */
-/*   Updated: 2014/11/17 18:16:46 by fschuber         ###   ########.fr       */
+/*   Updated: 2014/11/21 03:43:20 by fschuber         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string.h>
+#include "libft.h"
+#include <stdlib.h>
 
 char *strdup(const char *s1)
 {

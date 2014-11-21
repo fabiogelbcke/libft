@@ -6,12 +6,31 @@
 /*   By: fschuber <fschuber@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/11/17 19:41:57 by fschuber          #+#    #+#             */
-/*   Updated: 2014/11/17 20:02:19 by fschuber         ###   ########.fr       */
+/*   Updated: 2014/11/21 05:03:53 by fschuber         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <string.h>
 
-size_t strlcat(char *dst, const char *src, size_t size)
+size_t ft_strlcat(char *dst, const char *src, size_t size)
 {
-	size_t size;
+	int len;
+	char *srcptr;
+	int i;
+
+	srcptr = (char*)src;
+	len = 0;
+	i = 0;
+	while (dst++)
+	{
+		len++;
+		i++;
+	}
+	while (len < (int)size - 1 && *srcptr)
+		dst[i++] = *(srcptr++);
+	dst[i] = '\0';
+	srcptr = (char*)src;
+	while(srcptr++)
+		len++;
+	return len;
+}

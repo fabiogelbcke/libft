@@ -6,13 +6,17 @@
 /*   By: fschuber <fschuber@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/11/19 09:56:19 by fschuber          #+#    #+#             */
-/*   Updated: 2014/11/19 09:56:57 by fschuber         ###   ########.fr       */
+/*   Updated: 2014/11/21 03:47:24 by fschuber         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include <unistd.h>
 
 void ft_putstr(char const *s)
 {
 	int i;
+
+	i = 0;
 	while (s[i])
 		write(1, &s[i], 1);
 }

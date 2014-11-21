@@ -6,13 +6,12 @@
 /*   By: fschuber <fschuber@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/11/13 13:40:40 by fschuber          #+#    #+#             */
-/*   Updated: 2014/11/13 14:52:10 by fschuber         ###   ########.fr       */
+/*   Updated: 2014/11/21 04:04:37 by fschuber         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-#include <string.h>
-#include<stdlib.h>
+#include <stdlib.h>
+#include "libft.h"
 
 void *ft_memcpy(void *dst, const void *src, size_t n)
 {
@@ -21,26 +20,14 @@ void *ft_memcpy(void *dst, const void *src, size_t n)
 	int i;
 
 	ptr = dst;
+	srcptr = (void*)src;
 	i = 0;
-	while (i < n)
+	while (i < (int)n)
 	{
 		*((char*)ptr) = *((char*)srcptr);
 		ptr++;
 		srcptr++;
-		(void*)ptr;
-		(void*)srcptr;
+		i++;
 	}
 	return (dst);
-}
-
-int main(void)
-{
-	const char src[50] = "http://www.tutorialspoint.com";
-	char dest[50];
-
-	printf("Before memcpy dest = %s\n", dest);
-	ft_memcpy(dest, src, strlen(src)+1);
-	printf("After memcpy dest = %s\n", dest);
-   
-	return(0);
 }

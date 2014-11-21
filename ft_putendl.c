@@ -6,9 +6,11 @@
 /*   By: fschuber <fschuber@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/11/19 09:58:35 by fschuber          #+#    #+#             */
-/*   Updated: 2014/11/19 09:59:43 by fschuber         ###   ########.fr       */
+/*   Updated: 2014/11/21 03:47:45 by fschuber         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include <unistd.h>
 
 void ft_putendl(char const *s)
 {

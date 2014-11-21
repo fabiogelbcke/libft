@@ -6,9 +6,11 @@
 /*   By: fschuber <fschuber@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/11/19 09:55:34 by fschuber          #+#    #+#             */
-/*   Updated: 2014/11/19 09:55:54 by fschuber         ###   ########.fr       */
+/*   Updated: 2014/11/21 03:48:04 by fschuber         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include <unistd.h>
 
 void ft_putchar(char c)
 {

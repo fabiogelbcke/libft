@@ -6,7 +6,7 @@
 /*   By: fschuber <fschuber@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/11/13 13:34:48 by fschuber          #+#    #+#             */
-/*   Updated: 2014/11/13 13:36:54 by fschuber         ###   ########.fr       */
+/*   Updated: 2014/11/21 03:48:53 by fschuber         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ void		ft_bzero(void *s, size_t n)
 
 	i = 0;
 	str = s;
-	while (i < n)
+	while (i < (int)n)
 	{
 		str[i] = 0;
 		i++;

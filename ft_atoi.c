@@ -6,7 +6,7 @@
 /*   By: fschuber <fschuber@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/09/01 14:26:39 by fschuber          #+#    #+#             */
-/*   Updated: 2014/11/18 04:39:21 by fschuber         ###   ########.fr       */
+/*   Updated: 2014/11/21 03:54:59 by fschuber         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ int		ft_atoi(const char *str)
 	factor = 1;
 	result = 0;
 	length = 0;
-	strptr = str;
+	strptr = (char*)str;
 	while (*strptr)
 	{
 		strptr++;
