@@ -6,14 +6,16 @@
 /*   By: fschuber <fschuber@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/11/21 07:40:06 by fschuber          #+#    #+#             */
-/*   Updated: 2014/11/21 07:41:57 by fschuber         ###   ########.fr       */
+/*   Updated: 2014/11/21 08:13:54 by fschuber         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include <stdlib.h>
 
 void	ft_strdel(char **as)
 {
 	if (!as || !*as)
 		return;
 	free(*as);
-	*as = NULL:
+	*as = NULL;
 }

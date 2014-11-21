@@ -6,7 +6,7 @@
 /*   By: fschuber <fschuber@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/11/21 07:33:33 by fschuber          #+#    #+#             */
-/*   Updated: 2014/11/21 07:38:18 by fschuber         ###   ########.fr       */
+/*   Updated: 2014/11/21 08:14:11 by fschuber         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ char *ft_strnew(size_t size)
 	if (!str)
 		return NULL;
 	i = 0;
-	while (i < size)
+	while (i < (int)size)
 	{
 		str[i] = 0;
 		i++;
