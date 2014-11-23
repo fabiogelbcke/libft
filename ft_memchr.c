@@ -6,7 +6,7 @@
 /*   By: fschuber <fschuber@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/11/21 06:54:26 by fschuber          #+#    #+#             */
-/*   Updated: 2014/11/21 07:01:27 by fschuber         ###   ########.fr       */
+/*   Updated: 2014/11/23 06:32:57 by fschuber         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,7 @@ void *ft_memchr(const void *s, int c, size_t n)
 		if (*ptr == (char)c)
 			return ptr;
 		ptr++;
+		i++;
 	}
 	return NULL;
 }

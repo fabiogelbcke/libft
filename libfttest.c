@@ -75,8 +75,7 @@ int     uf_test_lstdelone(void);
 int     uf_test_lstdel(void);
 int     uf_test_lstadd(void);
 int     uf_test_lstiter(void);
-int uf_test_lstmap(void);
- 
+int uf_test_lstmap(void); 
 typedef struct  s_test
 {
         const char      *name;
@@ -192,7 +191,7 @@ int                                     main(int argc, const char **argv)
         D_ADD_TEST(strsplit);
 #define D_ITOA
         D_ADD_HCTEST(itoa);
-#define D_STRTRIM
+/*#define D_STRTRIM
         D_ADD_TEST(strtrim);
 #define D_LSTNEW
         D_ADD_TEST(lstnew);
@@ -205,7 +204,7 @@ int                                     main(int argc, const char **argv)
 #define D_LSTITER
         D_ADD_TEST(lstiter);
 #define D_LSTMAP
-        D_ADD_TEST(lstmap);
+        D_ADD_TEST(lstmap);*/
         while (test[i].set == true)
         {
                 printf("Test [%s] : ", test[i].name);

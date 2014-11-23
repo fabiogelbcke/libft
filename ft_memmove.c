@@ -6,7 +6,7 @@
 /*   By: fschuber <fschuber@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/11/21 06:35:15 by fschuber          #+#    #+#             */
-/*   Updated: 2014/11/21 06:50:49 by fschuber         ###   ########.fr       */
+/*   Updated: 2014/11/23 04:57:04 by fschuber         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,10 +21,11 @@ void *ft_memmove(void *dst, const void *src, size_t len)
 	ret = dst;
 	i = 0;
 	ptr = (char*)src;
-	while (i++ < (int)len)
+	while (i < (int)len)
 	{
 		*(char*)dst = *(ptr++);
 		dst = (char*)dst + 1;
+		i++;
 	}
 	return ret;
 }

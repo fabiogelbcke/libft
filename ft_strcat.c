@@ -6,11 +6,11 @@
 /*   By: fschuber <fschuber@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/11/17 19:00:39 by fschuber          #+#    #+#             */
-/*   Updated: 2014/11/17 19:07:05 by fschuber         ###   ########.fr       */
+/*   Updated: 2014/11/23 04:30:47 by fschuber         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char *strcat(char *s1, const char *s2)
+char *ft_strcat(char *s1, const char *s2)
 {
 	char *s1ptr;
 	

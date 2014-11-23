@@ -6,13 +6,13 @@
 /*   By: fschuber <fschuber@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/11/17 17:50:37 by fschuber          #+#    #+#             */
-/*   Updated: 2014/11/17 17:55:04 by fschuber         ###   ########.fr       */
+/*   Updated: 2014/11/23 04:31:19 by fschuber         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <string.h>
 
-size_t strlen(const char *s)
+size_t ft_strlen(const char *s)
 {
 	size_t i;
 

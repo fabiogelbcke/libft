@@ -1,0 +1,30 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strmapi.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: fschuber <fschuber@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2014/11/23 04:16:11 by fschuber          #+#    #+#             */
+/*   Updated: 2014/11/23 04:27:57 by fschuber         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include <stdlib.h>
+
+char * ft_strmapi(char const *s, char (*f)(unsigned int, char))
+{
+	char *str;
+	unsigned int i;
+
+	i = 0;
+	while(s[i])
+		i++;
+	str = (char*)malloc(sizeof(char) * (i + 1));
+	while(s[i])
+	{
+		(*f)(i, s[i]);
+		i++;
+	}
+	return str;
+}

@@ -6,11 +6,11 @@
 /*   By: fschuber <fschuber@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/11/18 04:55:46 by fschuber          #+#    #+#             */
-/*   Updated: 2014/11/18 05:10:41 by fschuber         ###   ########.fr       */
+/*   Updated: 2014/11/23 04:29:55 by fschuber         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int isalnum(int c)
+int ft_isalnum(int c)
 {
 	if (c >= 48 && c <= 57)
 		return 1;

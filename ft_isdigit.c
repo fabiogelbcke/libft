@@ -6,11 +6,11 @@
 /*   By: fschuber <fschuber@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/11/18 04:46:28 by fschuber          #+#    #+#             */
-/*   Updated: 2014/11/18 04:48:04 by fschuber         ###   ########.fr       */
+/*   Updated: 2014/11/23 04:30:12 by fschuber         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int isdigit(int c)
+int ft_isdigit(int c)
 {
 	if (c >= 48 && c <= 57)
 		return 1;

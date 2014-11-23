@@ -6,13 +6,13 @@
 /*   By: fschuber <fschuber@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/11/17 20:07:40 by fschuber          #+#    #+#             */
-/*   Updated: 2014/11/21 03:46:58 by fschuber         ###   ########.fr       */
+/*   Updated: 2014/11/23 04:30:56 by fschuber         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #import <string.h>
 
-char *strchr(const char *s, int c)
+char *ft_strchr(const char *s, int c)
 {
 	while(*s)
 	{

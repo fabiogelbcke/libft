@@ -6,20 +6,20 @@
 /*   By: fschuber <fschuber@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/11/18 05:57:01 by fschuber          #+#    #+#             */
-/*   Updated: 2014/11/18 05:58:43 by fschuber         ###   ########.fr       */
+/*   Updated: 2014/11/23 07:06:31 by fschuber         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
+#include "libft.h"
 
 void *ft_memalloc(size_t size)
 {
 	void *mem;
 
-	mem = malloc(size);
-	if (!mem)
-	{
-		return NULL;
-	}
+	mem = (void*)malloc(size);
+/*	if (!mem)
+	return NULL;*/
+	mem = ft_memset(mem, 0, size);
 	return mem;
 }
