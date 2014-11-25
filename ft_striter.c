@@ -6,12 +6,16 @@
 /*   By: fschuber <fschuber@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/11/19 08:34:00 by fschuber          #+#    #+#             */
-/*   Updated: 2014/11/19 08:36:15 by fschuber         ###   ########.fr       */
+/*   Updated: 2014/11/25 13:50:06 by fschuber         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
+
 void ft_striter(char *s, void (*f)(char *))
 {
+	if (!s || !*f || *f)
+		return;
 	while (*s)
 	{
 		(*f)(s);

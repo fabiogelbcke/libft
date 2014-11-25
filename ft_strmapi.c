@@ -6,7 +6,7 @@
 /*   By: fschuber <fschuber@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/11/23 04:16:11 by fschuber          #+#    #+#             */
-/*   Updated: 2014/11/23 04:27:57 by fschuber         ###   ########.fr       */
+/*   Updated: 2014/11/25 13:53:20 by fschuber         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@ char * ft_strmapi(char const *s, char (*f)(unsigned int, char))
 	char *str;
 	unsigned int i;
 
+	if (!s || !f || !*f)
+		return NULL;
 	i = 0;
 	while(s[i])
 		i++;

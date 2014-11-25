@@ -6,13 +6,14 @@
 /*   By: fschuber <fschuber@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/11/21 07:58:46 by fschuber          #+#    #+#             */
-/*   Updated: 2014/11/21 08:20:44 by fschuber         ###   ########.fr       */
+/*   Updated: 2014/11/25 21:47:40 by fschuber         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
+#include <stdio.h>
 
-void	numtostr(char **strptr, int n, int size)
+void	numtostr(char **strptr, long int n, long int size)
 {
 	char *str;
 
@@ -24,7 +25,7 @@ void	numtostr(char **strptr, int n, int size)
 	}
 	if (n == 0)
 	{
-		str[0] = 0;
+		str[0] = '0';
 		return;
 	}
 	str[size] = '\0';
@@ -40,7 +41,7 @@ char	*ft_itoa(int n)
 {
 	char *str;
 	int size;
-	int temp;
+	long int temp;
 
 	size = 0;
 	temp = n;
@@ -54,9 +55,12 @@ char	*ft_itoa(int n)
 		temp = temp / 10;
 		size++;
 	}
+	if (n == 0)
+		size = 1;
 	str = (char*)malloc(sizeof(char) * size + 1);
 	if (!str)
 		return NULL;
 	numtostr(&str, n, size);
 	return str;
 }
+

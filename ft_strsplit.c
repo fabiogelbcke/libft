@@ -6,11 +6,12 @@
 /*   By: fschuber <fschuber@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/11/19 09:34:28 by fschuber          #+#    #+#             */
-/*   Updated: 2014/11/23 04:34:28 by fschuber         ###   ########.fr       */
+/*   Updated: 2014/11/25 21:25:13 by fschuber         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
+#include <stdio.h>
 
 static int numberofwords(char const *s, char c)
 {
@@ -20,16 +21,43 @@ static int numberofwords(char const *s, char c)
 	i = 0;
 	n = 0;
 	while (s[i])
+	{
 		if (s[i] != c && (i == 0 || s[i - 1] == c))
 			n++;
-	i++;
-	return i;
+		i++;
+	}
+	return n;
 }
 
 char **ft_strsplit(char const *s, char c)
 {
 	char **table;
+	int i;
+	int k;
+	int size;
 
-	table = (char **)malloc(sizeof(char*) * numberofwords(s,c));
+	i = 0;
+	k = 0;
+	if (!s || !c)
+		return NULL;
+	table = (char **)malloc(sizeof(char*) * (numberofwords(s,c) + 1));
+	if (!table)
+		return NULL;
+	while (k < numberofwords(s,c))
+	{
+		size = 0;
+		while (s[i] == c)
+			i++;
+		while(s[i + size] != c && s[i + size])
+			size++;
+		table[k] = (char*)malloc((size + 1) * sizeof(char));
+		i--;
+		size = 0;
+		while (s[++i] != c && s[i])
+			table[k][size++] = s[i];
+		table[k][size] = '\0';
+		k++;
+	}
+	table[k] = NULL;
 	return table;
 }

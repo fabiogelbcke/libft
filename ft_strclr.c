@@ -6,12 +6,14 @@
 /*   By: fschuber <fschuber@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/11/19 08:33:08 by fschuber          #+#    #+#             */
-/*   Updated: 2014/11/19 08:33:37 by fschuber         ###   ########.fr       */
+/*   Updated: 2014/11/25 13:46:01 by fschuber         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 void ft_strclr(char *s)
 {
+	if (!s)
+		return;
 	while (*s)
 	{
 		*s = '\0';
