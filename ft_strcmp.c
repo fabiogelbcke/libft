@@ -6,7 +6,7 @@
 /*   By: fschuber <fschuber@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/11/18 04:17:28 by fschuber          #+#    #+#             */
-/*   Updated: 2014/11/21 03:46:18 by fschuber         ###   ########.fr       */
+/*   Updated: 2014/11/26 13:22:20 by fschuber         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,5 +24,5 @@ int ft_strcmp(const char *s1, const char *s2)
 		ptr1++;
 		ptr2++;
 	}
-	return ptr1-ptr2;
+	return *ptr1 - *ptr2;
 }

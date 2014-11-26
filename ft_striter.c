@@ -6,7 +6,7 @@
 /*   By: fschuber <fschuber@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/11/19 08:34:00 by fschuber          #+#    #+#             */
-/*   Updated: 2014/11/25 13:50:06 by fschuber         ###   ########.fr       */
+/*   Updated: 2014/11/26 14:58:05 by fschuber         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void ft_striter(char *s, void (*f)(char *))
 {
-	if (!s || !*f || *f)
+	if (!s || !f || !(*f))
 		return;
 	while (*s)
 	{

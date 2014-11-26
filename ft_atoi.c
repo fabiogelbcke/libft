@@ -6,9 +6,11 @@
 /*   By: fschuber <fschuber@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/09/01 14:26:39 by fschuber          #+#    #+#             */
-/*   Updated: 2014/11/21 03:54:59 by fschuber         ###   ########.fr       */
+/*   Updated: 2014/11/26 13:28:08 by fschuber         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 void	change_number(int *num, int *factor, char *ptr)
 {
@@ -35,6 +37,8 @@ int		ft_atoi(const char *str)
 	result = 0;
 	length = 0;
 	strptr = (char*)str;
+	if (!ft_strcmp(str, ""))
+		return 0;
 	while (*strptr)
 	{
 		strptr++;

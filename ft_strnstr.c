@@ -6,7 +6,7 @@
 /*   By: fschuber <fschuber@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/11/18 04:14:20 by fschuber          #+#    #+#             */
-/*   Updated: 2014/11/21 03:17:32 by fschuber         ###   ########.fr       */
+/*   Updated: 2014/11/26 14:45:33 by fschuber         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,25 +16,28 @@ char *ft_strnstr(const char *s1, const char *s2, size_t n)
 {
     char *ptr1;
     char *ptr2;
-	char *ptrs1;
 	int i;
+	int k;
 
 	i = 0;
-	ptrs1 = (char*)s1;
-    while(*ptrs1 && i < (int)n)
+	if (!s1 || !s2)
+		return NULL;
+	if (!(*s1) && !(*s2))
+		return (char*)s1;
+    while(s1[i] && i < (int)n)
     {
-        ptr1 = (char*)ptrs1;
+		k = 0;
+        ptr1 = (char*)&(s1[i]);
         ptr2 = (char*)s2;
-        while (*ptr1 != '\0')
+        while (*ptr1 && *ptr2 && i + k++ < (int)n)
         {
             if (*ptr1 != *ptr2)
                 break;
             ptr1++;
             ptr2++;
         }
-        if (*ptr1 == '\0')
-            return (char*)ptrs1;
-        ptrs1++;
+        if (!(*ptr2))
+            return ((char*)&(s1[i]));
 		i++;
     }
     return NULL;
