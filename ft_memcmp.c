@@ -6,7 +6,7 @@
 /*   By: fschuber <fschuber@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/11/21 07:04:12 by fschuber          #+#    #+#             */
-/*   Updated: 2014/11/23 04:30:36 by fschuber         ###   ########.fr       */
+/*   Updated: 2014/11/26 18:49:09 by fschuber         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,9 @@ int ft_memcmp(const void *s1, const void *s2, size_t n)
 	{
 		ptr1++;
 		ptr2++;
+		i++;
 	}
-	return *(int*)ptr1 - *(int*)ptr2;
+	if (i == (int)n)
+		return 0;
+	return *ptr1 - *ptr2;
 }
