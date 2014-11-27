@@ -6,7 +6,7 @@
 /*   By: fschuber <fschuber@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/11/19 09:56:19 by fschuber          #+#    #+#             */
-/*   Updated: 2014/11/21 03:47:24 by fschuber         ###   ########.fr       */
+/*   Updated: 2014/11/27 19:07:27 by fschuber         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,5 +18,8 @@ void ft_putstr(char const *s)
 
 	i = 0;
 	while (s[i])
+	{
 		write(1, &s[i], 1);
+		i++;
+	}
 }

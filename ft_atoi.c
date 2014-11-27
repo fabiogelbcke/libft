@@ -6,52 +6,43 @@
 /*   By: fschuber <fschuber@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/09/01 14:26:39 by fschuber          #+#    #+#             */
-/*   Updated: 2014/11/26 13:28:08 by fschuber         ###   ########.fr       */
+/*   Updated: 2014/11/27 18:02:37 by fschuber         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	change_number(int *num, int *factor, char *ptr)
+int				ft_atoi(const char *str)
 {
-	if (*ptr >= 48 && *ptr <= 57)
-	{
-		*num += (*ptr - 48) * (*factor);
-		*factor = *factor * 10;
-	}
-	else
-	{
-		*factor = 1;
-		*num = 0;
-	}
-}
+	char		*ptr;
+	long int	num;
+	long int	factor;
+	int			isneg;
 
-int		ft_atoi(const char *str)
-{
-	int result;
-	int factor;
-	int length;
-	char *strptr;
-
-	factor = 1;
-	result = 0;
-	length = 0;
-	strptr = (char*)str;
-	if (!ft_strcmp(str, ""))
+	if (!str)
 		return 0;
-	while (*strptr)
+	ptr = (char*)str;
+	num = 0;
+	factor = 1;
+	isneg = 1;
+	while (*ptr == '\n' || *ptr == ' ' || *ptr == '\v' ||
+				*ptr == '\t' || *ptr == '\r' || *ptr == '\f')
+		ptr++;
+	if (*ptr == '-' || *ptr == '+')
 	{
-		strptr++;
-		length++;
+		if (*ptr == '-')
+			isneg = -1;
+		ptr++;
 	}
-	strptr--;
-	while (length-- > 0)
+	while(*ptr >= 48 && *ptr <= 57)
+		ptr++;
+	ptr--;
+	while(*ptr >= 48 && *ptr <= 57)
 	{
-		if (length == 1 && *strptr == 45)
-			result = result * -1;
-		else
-			change_number(&result, &factor, strptr);
-		strptr--;
+		num += (*ptr - 48) * factor;
+		factor = factor * 10;
+		ptr--;
 	}
-	return (result);
+	num = num * isneg;
+	return num;
 }

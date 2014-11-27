@@ -9,16 +9,16 @@
 /*   Updated: 2014/11/21 07:08:57 by fschuber         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
- 
+
 #include <string.h>
 #include <stdio.h>
 #include <stdbool.h>
 #include <stdlib.h>
 #include <ctype.h>
 #include <time.h>
- 
+
 #include "libft.h"
- 
+
 #define D_ERROR { printf("Error Line %d, Funct %s ", __LINE__ - 1, __func__); return (0); }
 #define D_ADD_HCTEST(name)      uf_add_test(test, "\033[33m"#name"\033[0m", uf_test_##name);
 #define D_ADD_TEST(name)        uf_add_test(test, #name, uf_test_##name);
@@ -26,7 +26,7 @@
 #define RANDT   512
 #define LONG    10000
 #define BOOL(x) (x == 0) ? 0 : 1
- 
+
 int     uf_test_strtrim(void);
 int     uf_test_strsplit(void);
 int     uf_test_strjoin(void);
@@ -75,31 +75,31 @@ int     uf_test_lstdelone(void);
 int     uf_test_lstdel(void);
 int     uf_test_lstadd(void);
 int     uf_test_lstiter(void);
-int uf_test_lstmap(void); 
+int uf_test_lstmap(void);
 typedef struct  s_test
 {
         const char      *name;
         int                     (*funct)(void);
         bool            set;
 }                               t_test;
- 
+
 void                            uf_add_test(t_test *test, const char *name, int (*funct)(void))
 {
         static int              i = 0;
- 
+
         test[i].name = name;
         test[i].funct = funct;
         test[i].set = true;
         test[i + 1].set = false;
         i = i + 1;
 }
- 
- 
+
+
 int                                     main(int argc, const char **argv)
 {
         int                             i;
         t_test                  test[D_TEST];
- 
+
         srand(time(NULL));
         i = 0;
         memset(test, 0, D_TEST);
@@ -218,21 +218,21 @@ int                                     main(int argc, const char **argv)
         (void)argv;
         return (0);
 }
- 
+
 void    uf_del_callback(void *d, size_t s)
 {
         free(d);
         (void)s;
 }
- 
+
 #ifdef  D_LSTMAP
- 
+
 t_list          *uf_testmap(t_list *elem)
 {
         t_list  *new;
         char    *content;
         size_t  i;
- 
+
         content = strdup((char *)(elem->content));
         i = 0;
         while (i < ft_strlen(content))
@@ -244,14 +244,14 @@ t_list          *uf_testmap(t_list *elem)
         free(content);
         return (new);
 }
- 
+
 int                                     uf_test_lstmap(void)
 {
         t_list                  *lst_initial;
         t_list                  *lst;
         char                    *content;
         t_list                  *(*f)(t_list *);
- 
+
         content = "toto";
         lst_initial = ft_lstnew((void const *) content, 5);
         content = "tata";
@@ -269,19 +269,19 @@ int                                     uf_test_lstmap(void)
         return (1);
 }
 #endif
- 
+
 #ifdef  D_LSTITER
 void    uf_iter_callback(t_list *v)
 {
         *(size_t*)v->content = *(size_t*)v->content + 1;
 }
- 
+
 int                                     uf_test_lstiter(void)
 {
         t_list  *begin;
         size_t  v;
         size_t  w;
- 
+
         v = 1;
         w = 2;
         begin = ft_lstnew(&v, sizeof(size_t));
@@ -296,7 +296,7 @@ int                                     uf_test_lstiter(void)
         return (1);
 }
 #endif
- 
+
 #ifdef D_LSTADD
 int                                     uf_test_lstadd(void)
 {
@@ -304,7 +304,7 @@ int                                     uf_test_lstadd(void)
         t_list  *add;
         t_list  *tmp;
         size_t  v;
- 
+
         v = 1;
         begin = ft_lstnew(&v, sizeof(size_t));
         tmp = begin;
@@ -319,13 +319,13 @@ int                                     uf_test_lstadd(void)
         return (1);
 }
 #endif
- 
+
 #ifdef  D_LSTDELONE
 int                                     uf_test_lstdelone(void)
 {
         t_list  *begin;
         size_t  v;
- 
+
         v = 1;
         begin = ft_lstnew(&v, sizeof(void *));
         begin->next = ft_lstnew(&v, sizeof(void *));
@@ -342,13 +342,13 @@ int                                     uf_test_lstdelone(void)
         return (1);
 }
 #endif
- 
+
 #ifdef  D_LSTDEL
 int                                     uf_test_lstdel(void)
 {
         t_list  *begin;
         size_t  v;
- 
+
         v = 1;
         begin = ft_lstnew(&v, sizeof(void *));
         begin->next = ft_lstnew(&v, sizeof(void *));
@@ -359,13 +359,13 @@ int                                     uf_test_lstdel(void)
         return (1);
 }
 #endif
- 
+
 #ifdef  D_LSTNEW
 int                                     uf_test_lstnew(void)
 {
         t_list  *begin;
         size_t  v;
- 
+
         v = 1;
         begin = ft_lstnew(NULL, 36);
         if (begin != 0 && (begin->content_size != 0 || begin->content != NULL))
@@ -387,11 +387,11 @@ int                                     uf_test_lstnew(void)
         return (1);
 }
 #endif
- 
+
 int                                     uf_free_tab(void **tab)
 {
         unsigned int    i;
- 
+
         if (tab == NULL)
                 return (0);
         i = 0;
@@ -403,7 +403,7 @@ int                                     uf_free_tab(void **tab)
         free(tab);
         return (1);
 }
- 
+
 #ifdef  D_STRTRIM
 int                                     uf_test_strtrim(void)
 {
@@ -413,7 +413,7 @@ int                                     uf_test_strtrim(void)
         char                    str4[] = "   test   ";
         char                    str5[] = "t t";
         char                    *r;
- 
+
         ft_strtrim(NULL);
         r = ft_strtrim(str);
         if (strcmp(r, "Bon\t \njour"))
@@ -463,12 +463,12 @@ int                                     uf_test_strtrim(void)
         return (1);
 }
 #endif
- 
+
 #ifdef  D_STRSPLIT
 int                                     uf_test_strsplit(void)
 {
         char                    **ret;
- 
+
         ft_strsplit(NULL, 0);
         ft_strsplit(NULL, 'a');
         ret = ft_strsplit("", '*');
@@ -589,12 +589,12 @@ int                                     uf_test_strsplit(void)
         return (1);
 }
 #endif
- 
+
 #ifdef  D_STRJOIN
 int                             uf_test_strjoin(void)
 {
         char            *ret;
- 
+
         ft_strjoin(NULL, NULL);
         ft_strjoin(NULL, "");
         ft_strjoin("", NULL);
@@ -633,13 +633,13 @@ int                             uf_test_strjoin(void)
         return (1);
 }
 #endif
- 
+
 #ifdef  D_STRSUB
 int                             uf_test_strsub(void)
 {
         char            *ret;
         char            str[] = "*Hello*";
- 
+
         ft_strsub(NULL, 0, 0);
         ft_strsub(NULL, 1, 0);
         ft_strsub(NULL, 1, 1);
@@ -687,27 +687,27 @@ int                             uf_test_strsub(void)
         return (1);
 }
 #endif
- 
+
 void                    uf_striteri_callback(unsigned int i, char *s)
 {
         *s = *s + i;
 }
- 
+
 void                    uf_striter_callback(char *s)
 {
         *s = *s + 1;
 }
- 
+
 char                    uf_strmap_callback(char s)
 {
         return (s + 1);
 }
- 
+
 char                    uf_strmapi_callback(unsigned int i, char s)
 {
         return (s + i);
 }
- 
+
 #ifdef  D_ITOA
 int                             uf_test_itoa(void)
 {
@@ -770,13 +770,13 @@ int                             uf_test_itoa(void)
         return (1);
 }
 #endif
- 
+
 #ifdef  D_STRNEQU
 int                             uf_test_strnequ(void)
 {
         int             ret, i, j, k, n;
         char    tab1[50], tab2[50];
- 
+
         ft_strnequ(NULL, NULL, 0);
         ft_strnequ(NULL, NULL, 1);
         ft_strnequ(NULL, "", 1);
@@ -841,13 +841,13 @@ int                             uf_test_strnequ(void)
         return (1);
 }
 #endif
- 
+
 #ifdef  D_STREQU
 int                             uf_test_strequ(void)
 {
         int                     ret, i, j, k, n;
         char            *str, tab1[50], tab2[50];
- 
+
         ft_strequ(NULL, NULL);
         ft_strequ("", NULL);
         ft_strequ(NULL, "");
@@ -891,7 +891,7 @@ int                             uf_test_strequ(void)
                                 but have ret = \"%d\"\033[0m\n", ret);
                 return (0);
         }
- 
+
         k = 0;
         while (k <= 60)
         {
@@ -920,14 +920,14 @@ int                             uf_test_strequ(void)
         return (1);
 }
 #endif
- 
+
 #ifdef  D_STRMAPI
 int                             uf_test_strmapi(void)
 {
         char            str[] = "Hello";
         char            empty[] = "";
         char            *ret;
- 
+
         ft_strmapi(NULL, NULL);
         ft_strmapi(empty, NULL);
         ret = ft_strmapi(str, uf_strmapi_callback);
@@ -941,13 +941,13 @@ int                             uf_test_strmapi(void)
         return (1);
 }
 #endif
- 
+
 #ifdef  D_STRMAP
 int                             uf_test_strmap(void)
 {
         char            str[] = "Hello";
         char            *ret;
- 
+
         ft_strmap(NULL, NULL);
         ft_strmap("", NULL);
         ret = ft_strmap(str, uf_strmap_callback);
@@ -961,12 +961,12 @@ int                             uf_test_strmap(void)
         return (1);
 }
 #endif
- 
+
 #ifdef  D_STRITERI
 int                             uf_test_striteri(void)
 {
         char            str[] = "Hello";
- 
+
         ft_striteri(NULL, NULL);
         ft_striteri(str, NULL);
         ft_striteri(str, uf_striteri_callback);
@@ -975,12 +975,12 @@ int                             uf_test_striteri(void)
                         return (1);
 }
 #endif
- 
+
 #ifdef  D_STRITER
 int                             uf_test_striter(void)
 {
         char            str[] = "Hello";
- 
+
         ft_striter(NULL, NULL);
         ft_striter(str, NULL);
         ft_striter(str, uf_striter_callback);
@@ -989,13 +989,13 @@ int                             uf_test_striter(void)
                         return (1);
 }
 #endif
- 
+
 #ifdef  D_STRCLR
 int                             uf_test_strclr(void)
 {
         int                     i;
         char            str[] = "Hello";
- 
+
         i = 0;
         ft_strclr(NULL);
         ft_strclr(str);
@@ -1021,12 +1021,12 @@ int                             uf_test_strclr(void)
         return (1);
 }
 #endif
- 
+
 #ifdef  D_STRDEL
 int                             uf_test_strdel(void)
 {
         char            *ret;
- 
+
         ft_strdel(NULL);
         ret = ft_strnew(4);
         ft_strdel(&ret);
@@ -1039,13 +1039,13 @@ int                             uf_test_strdel(void)
                         return (1);
 }
 #endif
- 
+
 #ifdef  D_STRNEW
 int                             uf_test_strnew(void)
 {
         char            *ret;
         int                     i;
- 
+
         i = 0;
         ret = ft_strnew(4);
         if (ret != NULL)
@@ -1059,19 +1059,19 @@ int                             uf_test_strnew(void)
         return (1);
 }
 #endif
- 
+
 #ifdef  D_MEMALLOC_AND_DEL
 int                             uf_test_memalloc_and_del(void)
 {
         void            *ret;
         int                     i;
- 
+
         ret = ft_memalloc(5);
         if (ret)
         {
                 i = 0;
                 while (i < 5)
-                {      
+                {
                         if (((char *)ret)[i++])
                                 D_ERROR;
                 }
@@ -1083,12 +1083,12 @@ int                             uf_test_memalloc_and_del(void)
         return (1);
 }
 #endif
- 
+
 #ifdef  D_TOLOWER
 int                             uf_test_tolower(void)
 {
         int                     i;
- 
+
         i = -300;
         while (i < 300)
         {
@@ -1099,12 +1099,12 @@ int                             uf_test_tolower(void)
         return (1);
 }
 #endif
- 
+
 #ifdef  D_TOUPPER
 int                             uf_test_toupper(void)
 {
         int                     i;
- 
+
         i = -300;
         while (i < 300)
         {
@@ -1115,12 +1115,12 @@ int                             uf_test_toupper(void)
         return (1);
 }
 #endif
- 
+
 #ifdef  D_ISPRINT
 int                             uf_test_isprint(void)
 {
         int                     i;
- 
+
         i = -300;
         while (i < 300)
         {
@@ -1131,12 +1131,12 @@ int                             uf_test_isprint(void)
         return (1);
 }
 #endif
- 
+
 #ifdef  D_ISASCII
 int                             uf_test_isascii(void)
 {
         int                     i;
- 
+
         i = -300;
         while (i < 300)
         {
@@ -1147,12 +1147,12 @@ int                             uf_test_isascii(void)
         return (1);
 }
 #endif
- 
+
 #ifdef  D_ISALNUM
 int                             uf_test_isalnum(void)
 {
         int                     i;
- 
+
         i = -300;
         while (i < 300)
         {
@@ -1163,12 +1163,12 @@ int                             uf_test_isalnum(void)
         return (1);
 }
 #endif
- 
+
 #ifdef  D_ISDIGIT
 int                             uf_test_isdigit(void)
 {
         int                     i;
- 
+
         i = -300;
         while (i < 300)
         {
@@ -1179,12 +1179,12 @@ int                             uf_test_isdigit(void)
         return (1);
 }
 #endif
- 
+
 #ifdef  D_ISALPHA
 int                             uf_test_isalpha(void)
 {
         int                     i;
- 
+
         i = -300;
         while (i < 300)
         {
@@ -1195,13 +1195,13 @@ int                             uf_test_isalpha(void)
         return (1);
 }
 #endif
- 
+
 #ifdef  D_ATOI
 int                             uf_test_atoi(void)
 {
         size_t          i, j;
         char            str[12] = {0};
- 
+
         if (atoi("\n\v\t\r\f -123") != ft_atoi("\n\v\t\r\f -123"))
                 D_ERROR;
         if (atoi("12-3") != ft_atoi("12-3"))
@@ -1239,19 +1239,20 @@ int                             uf_test_atoi(void)
                 }
                 str[11] = 0;
                 if (atoi(str) != ft_atoi(str))
-                        D_ERROR
+                  printf("numero: %s deveria: %d eh: %d\n",str, atoi(str), ft_atoi(str));
+                        //D_ERROR
                                 i++;
         }
         return (1);
 }
 #endif
- 
+
 #ifdef  D_STRNCMP
 int                             uf_test_strncmp(void)
 {
         int             a, i, j, k, n;
         char    tab[50], tab2[50];
- 
+
         a = ft_strncmp("abc", "abc", 2);
         if (a)
                 D_ERROR;
@@ -1299,13 +1300,13 @@ int                             uf_test_strncmp(void)
         return (1);
 }
 #endif
- 
+
 #ifdef  D_STRCMP
 int                             uf_test_strcmp(void)
 {
         int                     a, i, j, k, n;
         char            tab1[50], tab2[50];
- 
+
         a = ft_strcmp("abc", "abc");
         if (a)
                 D_ERROR;
@@ -1342,17 +1343,17 @@ int                             uf_test_strcmp(void)
                 }
                 ++k;
         }
- 
+
         return (1);
 }
 #endif
- 
+
 #ifdef  D_STRNSTR
 int                             uf_test_strnstr(void)
 {
         char            *str = "Hello les genw";
- 
- 
+
+
         if (strnstr(str, "Hello", 6) != ft_strnstr(str, "Hello", 6))
                 D_ERROR;
         if (strnstr(str, "Hello", 3) != ft_strnstr(str, "Hello", 3))
@@ -1376,12 +1377,12 @@ int                             uf_test_strnstr(void)
         return (1);
 }
 #endif
- 
+
 #ifdef  D_STRSTR
 int                             uf_test_strstr(void)
 {
         char            *str = "Hello les genw";
- 
+
         if (strstr(str, "Hello") != ft_strstr(str, "Hello"))
                 D_ERROR;
         if (strstr(str, "les") != ft_strstr(str, "les"))
@@ -1403,12 +1404,12 @@ int                             uf_test_strstr(void)
         return (1);
 }
 #endif
- 
+
 #ifdef  D_STRRCHR
 int                             uf_test_strrchr(void)
 {
         char            str[] = "Hello je tesx";
- 
+
         if (strrchr(str, 'H') != ft_strrchr(str, 'H'))
         {
                 printf("notre=%s\nvotre=%s\n", strrchr(str, 'H'), ft_strrchr(str, 'H'));
@@ -1442,12 +1443,12 @@ int                             uf_test_strrchr(void)
         return (1);
 }
 #endif
- 
+
 #ifdef  D_STRCHR
 int                             uf_test_strchr(void)
 {
         char            str[] = "Hello je tesx";
- 
+
         if (strchr(str, 'H') != ft_strchr(str, 'H'))
                 D_ERROR;
         if (strchr(str, 'j') != ft_strchr(str, 'j'))
@@ -1463,7 +1464,7 @@ int                             uf_test_strchr(void)
         return (1);
 }
 #endif
- 
+
 #ifdef  D_STRLCAT
 int                             uf_test_strlcat(void)
 {
@@ -1472,9 +1473,11 @@ int                             uf_test_strlcat(void)
         size_t          i, j, k;
         size_t          n, ret1, ret2;
         char            tab[50], tab2[50], tab3[50];
- 
         if (strlcat(dest, "Hello ", 4) != ft_strlcat(dest2, "Hello ", 4))
+        {
+                printf("string: %s deveria: %d  eh: %d \n", dest, strlcat(dest, "Hello ", 4), ft_strlcat(dest2, "Hello ", 4));
                 D_ERROR;
+              }
         memset(dest, 0, sizeof(dest));
         memset(dest2, 0, sizeof(dest));
         j = strlcat(dest, "Hello ", 4);
@@ -1539,7 +1542,7 @@ int                             uf_test_strlcat(void)
         return (1);
 }
 #endif
- 
+
 #ifdef  D_STRNCAT
 int                             uf_test_strncat(void)
 {
@@ -1548,7 +1551,7 @@ int                             uf_test_strncat(void)
         char            tab[50], tab2[50], tab3[50];
         int         i, j, n;
         size_t k;
- 
+
         if (strncat(dest, "hello ", 2) != ft_strncat(dest, "hello ", 2))
                 D_ERROR
                         memset(dest, 0, sizeof(dest));
@@ -1597,7 +1600,7 @@ int                             uf_test_strncat(void)
         return (1);
 }
 #endif
- 
+
 #ifdef  D_STRCAT
 int                             uf_test_strcat(void)
 {
@@ -1606,7 +1609,7 @@ int                             uf_test_strcat(void)
         char            dest2[50] = {0};
         int                     i, j;
         size_t          k;
- 
+
         if (strcat(dest, "hello ") != ft_strcat(dest, "hello "))
                 D_ERROR
                         memset(dest, 0, sizeof(dest));
@@ -1618,7 +1621,7 @@ int                             uf_test_strcat(void)
         ft_strcat(dest2, "Hello ");
         if (strcmp(dest, dest2) != 0)
                 D_ERROR
- 
+
                         k = 0;
         while (k <= 60)
         {
@@ -1645,14 +1648,14 @@ int                             uf_test_strcat(void)
         return (1);
 }
 #endif
- 
+
 #ifdef  D_STRNCPY
 int                             uf_test_strncpy(void)
 {
         char            ctab[11], ctab2[21], ctab3[21];
         int                     i, j;
         size_t          k;
- 
+
         k = 0;
         while (k < 21)
         {
@@ -1682,18 +1685,18 @@ int                             uf_test_strncpy(void)
         return (1);
 }
 #endif
- 
+
 #ifdef  D_STRCPY
 int                             uf_test_strcpy(void)
 {
         char            dest[50] = {0};
         char            dest2[50] = {0};
- 
- 
+
+
         char                    ctab[11], ctab2[11], ctab3[11];
         int                             i, j;
         size_t                  k;
- 
+
         k = 0;
         while (k <= sizeof(ctab))
         {
@@ -1729,7 +1732,7 @@ int                             uf_test_strcpy(void)
                         return (1);
 }
 #endif
- 
+
 #ifdef  D_STRDUP
 int                             uf_test_strdup(void)
 {
@@ -1738,7 +1741,7 @@ int                             uf_test_strdup(void)
         char            *ret2;
         int                     i, j;
         size_t          k;
- 
+
         ret1 = strdup("");
         ret2 = ft_strdup("");
         if (strcmp(ret1, ret2) != 0)
@@ -1777,7 +1780,7 @@ int                             uf_test_strdup(void)
         return (1);
 }
 #endif
- 
+
 #ifdef  D_STRLEN
 int                             uf_test_strlen(void)
 {
@@ -1794,7 +1797,7 @@ int                             uf_test_strlen(void)
         return (1);
 }
 #endif
- 
+
 #ifdef  D_MEMMOVE
 int                             uf_test_memmove(void)
 {
@@ -1802,11 +1805,11 @@ int                             uf_test_memmove(void)
         char            str2[] = "memmove can be very useful......";
         char            str3[] = "memmove can be very useful......";
         char            str4[] = "memmove can be very useful......";
- 
+
         char            s1[101], t1[101];
         char            s2[101], t2[101];
         size_t          i, j;
- 
+
         i = 0;
         while (i < RANDT)
         {
@@ -1835,7 +1838,7 @@ int                             uf_test_memmove(void)
         return (1);
 }
 #endif
- 
+
 #ifdef  D_MEMCHR
 int                             uf_test_memchr(void)
 {
@@ -1844,7 +1847,7 @@ int                             uf_test_memchr(void)
         unsigned long   ltab[11];
         size_t                  j;
         int                             i;
- 
+
         i = -300;
         ft_memchr(NULL, 0, 0);
         while (i < 300)
@@ -1868,7 +1871,7 @@ int                             uf_test_memchr(void)
         return (1);
 }
 #endif
- 
+
 #ifdef  D_MEMCMP
 int                             uf_test_memcmp(void)
 {
@@ -1876,7 +1879,7 @@ int                             uf_test_memcmp(void)
         int             itab[11], itab2[11];
         unsigned long   ltab[11], ltab2[11];
         size_t          i, j;
- 
+
         i = 0;
         while (i < 11)
         {
@@ -1911,7 +1914,7 @@ int                             uf_test_memcmp(void)
         return (1);
 }
 #endif
- 
+
 #ifdef  D_MEMCCPY
 int                             uf_test_memccpy(void)
 {
@@ -1921,7 +1924,7 @@ int                             uf_test_memccpy(void)
         int                             i, j;
         size_t                  k;
         void                    *temp, *temp2;
- 
+
         k = 0;
         while (k <= sizeof(ltab))
         {
@@ -1961,7 +1964,7 @@ int                             uf_test_memccpy(void)
         return (1);
 }
 #endif
- 
+
 #ifdef  D_MEMCPY
 int                                     uf_test_memcpy(void)
 {
@@ -1971,7 +1974,7 @@ int                                     uf_test_memcpy(void)
         int                             i, j;
         size_t                  k;
         void                    *temp, *temp2, *temp3;
- 
+
         k = 0;
         while (k <= sizeof(ltab))
         {
@@ -2008,7 +2011,7 @@ int                                     uf_test_memcpy(void)
         return (1);
 }
 #endif
- 
+
 #ifdef  D_MEMSET
 int                                     uf_test_memset(void)
 {
@@ -2017,7 +2020,7 @@ int                                     uf_test_memset(void)
         unsigned long   ltab[11], ltab2[11];
         size_t                  i, j, k;
         void                    *temp, *temp2;
- 
+
         k = 0;
         while (k <= sizeof(ltab))
         {
@@ -2054,7 +2057,7 @@ int                                     uf_test_memset(void)
         return (1);
 }
 #endif
- 
+
 #ifdef  D_BZERO
 int                                     uf_test_bzero(void)
 {
@@ -2062,7 +2065,7 @@ int                                     uf_test_bzero(void)
         int                             itab[11], itab2[11];
         unsigned long   ltab[11], ltab2[11];
         size_t                  i, j;
- 
+
         i = 0;
         while (i < 11)
         {
