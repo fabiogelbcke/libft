@@ -6,10 +6,9 @@
 /*   By: fschuber <fschuber@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/11/21 06:52:31 by fschuber          #+#    #+#             */
-/*   Updated: 2014/11/28 18:16:40 by fschuber         ###   ########.fr       */
+/*   Updated: 2014/11/28 20:17:32 by fschuber         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
 
 #ifndef LIBFT_H
 # define LIBFT_H

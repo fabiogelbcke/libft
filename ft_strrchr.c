@@ -6,20 +6,20 @@
 /*   By: fschuber <fschuber@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/11/17 20:45:38 by fschuber          #+#    #+#             */
-/*   Updated: 2014/11/26 14:20:56 by fschuber         ###   ########.fr       */
+/*   Updated: 2014/11/28 19:59:18 by fschuber         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char *ft_strrchr(const char *s, int c)
+char		*ft_strrchr(const char *s, int c)
 {
-	char *ptr;
+	char	*ptr;
 
 	ptr = (char*)s;
-	while(*ptr)
+	while (*ptr)
 		ptr++;
-	while(ptr != (char*)s)
+	while (ptr != (char*)s)
 	{
 		if (*ptr == c)
 			return (ptr);

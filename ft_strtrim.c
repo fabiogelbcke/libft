@@ -6,7 +6,7 @@
 /*   By: fschuber <fschuber@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/11/19 09:22:09 by fschuber          #+#    #+#             */
-/*   Updated: 2014/11/28 18:52:50 by fschuber         ###   ########.fr       */
+/*   Updated: 2014/11/28 20:16:25 by fschuber         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,9 +20,9 @@ static int	getlen(char const *s)
 
 	len = 0;
 	i = 0;
-	while(s[i] == ' ' || s[i] == '\t' || s[i] == '\n')
+	while (s[i] == ' ' || s[i] == '\t' || s[i] == '\n')
 		i++;
-	while(s[i])
+	while (s[i])
 	{
 		len++;
 		i++;
@@ -30,7 +30,7 @@ static int	getlen(char const *s)
 	if (len == 0)
 		return (0);
 	i--;
-	while(s[i] == ' ' || s[i] == '\t' || s[i] == '\n')
+	while (s[i] == ' ' || s[i] == '\t' || s[i] == '\n')
 	{
 		i--;
 		len--;
@@ -46,18 +46,18 @@ char		*ft_strtrim(char const *s)
 	int		i;
 
 	i = 0;
-	if(!s)
-		return NULL;
+	if (!s)
+		return (NULL);
 	size = getlen(s);
 	ret = (char*)malloc(sizeof(char) * (size + 1));
 	if (size == (int)ft_strlen(s))
-		return ft_strcpy(ret, s);
+		return (ft_strcpy(ret, s));
 	if (!ret || !s)
 		return (NULL);
-	while(s[i] == ' ' || s[i] == '\t' || s[i] == '\n')
+	while (s[i] == ' ' || s[i] == '\t' || s[i] == '\n')
 		i++;
 	startindex = i;
-	while(i - startindex < size)
+	while (i - startindex < size)
 	{
 		ret[i - startindex] = s[i];
 		i++;

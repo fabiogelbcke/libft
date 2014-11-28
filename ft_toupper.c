@@ -6,13 +6,13 @@
 /*   By: fschuber <fschuber@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/11/18 05:27:29 by fschuber          #+#    #+#             */
-/*   Updated: 2014/11/23 04:32:43 by fschuber         ###   ########.fr       */
+/*   Updated: 2014/11/28 20:17:09 by fschuber         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 int ft_toupper(int c)
 {
-	if (c >= 97 && c <=122)
+	if (c >= 97 && c <= 122)
 		return (c - 32);
-	return c;
+	return (c);
 }
