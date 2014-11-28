@@ -6,19 +6,19 @@
 /*   By: fschuber <fschuber@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/11/17 19:00:39 by fschuber          #+#    #+#             */
-/*   Updated: 2014/11/23 04:30:47 by fschuber         ###   ########.fr       */
+/*   Updated: 2014/11/28 19:38:05 by fschuber         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char *ft_strcat(char *s1, const char *s2)
+char		*ft_strcat(char *s1, const char *s2)
 {
-	char *s1ptr;
-	
+	char	*s1ptr;
+
 	s1ptr = s1;
 	while (*s1ptr)
 		s1ptr++;
 	while (*s2)
 		*(s1ptr++) = *(s2++);
 	*s1ptr = '\0';
-	return s1;
+	return (s1);
 }

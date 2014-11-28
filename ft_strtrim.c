@@ -6,11 +6,11 @@
 /*   By: fschuber <fschuber@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/11/19 09:22:09 by fschuber          #+#    #+#             */
-/*   Updated: 2014/11/27 21:38:04 by fschuber         ###   ########.fr       */
+/*   Updated: 2014/11/28 18:52:50 by fschuber         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-//#include "libft.h"
+#include "libft.h"
 #include <stdlib.h>
 
 static int	getlen(char const *s)
@@ -22,11 +22,13 @@ static int	getlen(char const *s)
 	i = 0;
 	while(s[i] == ' ' || s[i] == '\t' || s[i] == '\n')
 		i++;
-	while(s[i++])
+	while(s[i])
+	{
 		len++;
+		i++;
+	}
 	if (len == 0)
 		return (0);
-	i--;
 	i--;
 	while(s[i] == ' ' || s[i] == '\t' || s[i] == '\n')
 	{
@@ -44,8 +46,12 @@ char		*ft_strtrim(char const *s)
 	int		i;
 
 	i = 0;
+	if(!s)
+		return NULL;
 	size = getlen(s);
 	ret = (char*)malloc(sizeof(char) * (size + 1));
+	if (size == (int)ft_strlen(s))
+		return ft_strcpy(ret, s);
 	if (!ret || !s)
 		return (NULL);
 	while(s[i] == ' ' || s[i] == '\t' || s[i] == '\n')

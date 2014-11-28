@@ -6,7 +6,7 @@
 /*   By: fschuber <fschuber@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/11/21 06:52:31 by fschuber          #+#    #+#             */
-/*   Updated: 2014/11/23 03:57:22 by fschuber         ###   ########.fr       */
+/*   Updated: 2014/11/28 18:16:40 by fschuber         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,10 +64,10 @@ char	*ft_strnew(size_t size);
 void	ft_strdel(char **as);
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char));
 char	*ft_itoa(int n);
-void ft_putnbr(int n);
-void ft_putchar_fd(char c, int fd);
-void ft_putstr_fd(char const *s, int fd);
-void ft_putendl_fd(char const *s, int fd);
-void ft_putnbr_fd(int n, int fd);
+void	ft_putnbr(int n);
+void	ft_putchar_fd(char c, int fd);
+void	ft_putstr_fd(char const *s, int fd);
+void	ft_putendl_fd(char const *s, int fd);
+void	ft_putnbr_fd(int n, int fd);
 
 #endif

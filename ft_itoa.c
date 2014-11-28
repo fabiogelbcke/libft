@@ -6,16 +6,16 @@
 /*   By: fschuber <fschuber@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/11/21 07:58:46 by fschuber          #+#    #+#             */
-/*   Updated: 2014/11/25 21:47:40 by fschuber         ###   ########.fr       */
+/*   Updated: 2014/11/28 19:28:22 by fschuber         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 #include <stdio.h>
 
-void	numtostr(char **strptr, long int n, long int size)
+void			numtostr(char **strptr, long int n, long int size)
 {
-	char *str;
+	char		*str;
 
 	str = *strptr;
 	if (n < 0)
@@ -26,10 +26,10 @@ void	numtostr(char **strptr, long int n, long int size)
 	if (n == 0)
 	{
 		str[0] = '0';
-		return;
+		return ;
 	}
 	str[size] = '\0';
-	while(n > 0)
+	while (n > 0)
 	{
 		str[size - 1] = '0' + (char)(n % 10);
 		n = n / 10;
@@ -37,11 +37,11 @@ void	numtostr(char **strptr, long int n, long int size)
 	}
 }
 
-char	*ft_itoa(int n)
+char			*ft_itoa(int n)
 {
-	char *str;
-	int size;
-	long int temp;
+	char		*str;
+	int			size;
+	long int	temp;
 
 	size = 0;
 	temp = n;
@@ -59,8 +59,7 @@ char	*ft_itoa(int n)
 		size = 1;
 	str = (char*)malloc(sizeof(char) * size + 1);
 	if (!str)
-		return NULL;
+		return (NULL);
 	numtostr(&str, n, size);
-	return str;
+	return (str);
 }
-

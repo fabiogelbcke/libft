@@ -6,17 +6,17 @@
 /*   By: fschuber <fschuber@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/11/18 04:55:46 by fschuber          #+#    #+#             */
-/*   Updated: 2014/11/23 04:29:55 by fschuber         ###   ########.fr       */
+/*   Updated: 2014/11/28 19:25:12 by fschuber         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 int ft_isalnum(int c)
 {
 	if (c >= 48 && c <= 57)
-		return 1;
+		return (1);
 	if (c >= 65 && c <= 90)
-		return 1;
+		return (1);
 	if (c >= 97 && c <= 122)
-		return 1;
-	return 0;
+		return (1);
+	return (0);
 }

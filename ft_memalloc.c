@@ -6,7 +6,7 @@
 /*   By: fschuber <fschuber@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/11/18 05:57:01 by fschuber          #+#    #+#             */
-/*   Updated: 2014/11/26 14:02:34 by fschuber         ###   ########.fr       */
+/*   Updated: 2014/11/28 19:28:59 by fschuber         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ void *ft_memalloc(size_t size)
 
 	mem = (void*)malloc(size);
 	if (!mem)
-		return NULL;
+		return (NULL);
 	mem = ft_memset(mem, 0, size);
-	return mem;
+	return (mem);
 }
