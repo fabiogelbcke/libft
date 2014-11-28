@@ -6,39 +6,37 @@
 /*   By: fschuber <fschuber@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/11/18 04:14:20 by fschuber          #+#    #+#             */
-/*   Updated: 2014/11/26 14:45:33 by fschuber         ###   ########.fr       */
+/*   Updated: 2014/11/28 19:56:12 by fschuber         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <string.h>
 
-char *ft_strnstr(const char *s1, const char *s2, size_t n)
+char		*ft_strnstr(const char *s1, const char *s2, size_t n)
 {
-    char *ptr1;
-    char *ptr2;
-	int i;
-	int k;
+	char	*ptr1;
+	char	*ptr2;
+	int		i;
+	int		k;
 
 	i = 0;
 	if (!s1 || !s2)
-		return NULL;
+		return (NULL);
 	if (!(*s1) && !(*s2))
-		return (char*)s1;
-    while(s1[i] && i < (int)n)
-    {
+		return ((char*)s1);
+	while (s1[i] && i < (int)n)
+	{
 		k = 0;
-        ptr1 = (char*)&(s1[i]);
-        ptr2 = (char*)s2;
-        while (*ptr1 && *ptr2 && i + k++ < (int)n)
-        {
-            if (*ptr1 != *ptr2)
-                break;
-            ptr1++;
-            ptr2++;
-        }
-        if (!(*ptr2))
-            return ((char*)&(s1[i]));
+		ptr1 = (char*)&(s1[i]);
+		ptr2 = (char*)s2;
+		while (*ptr1 && *ptr2 && i + k++ < (int)n)
+		{
+			if (*(ptr1++) != *(ptr2++))
+				break ;
+		}
+		if (!(*ptr2))
+			return ((char*)&(s1[i]));
 		i++;
-    }
-    return NULL;
+	}
+	return (NULL);
 }

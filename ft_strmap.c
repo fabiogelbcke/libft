@@ -6,28 +6,28 @@
 /*   By: fschuber <fschuber@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/11/19 08:40:38 by fschuber          #+#    #+#             */
-/*   Updated: 2014/11/25 13:52:28 by fschuber         ###   ########.fr       */
+/*   Updated: 2014/11/28 19:50:23 by fschuber         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include <stdlib.h>
 
-char *ft_strmap(char const *s, char (*f)(char))
+char		*ft_strmap(char const *s, char (*f)(char))
 {
-	char *ret;
-	int i;
+	char	*ret;
+	int		i;
 
 	i = 0;
 	if (!s || !f || !*f)
-		return NULL;
-	while(s[i])
+		return (NULL);
+	while (s[i])
 	{
 		i++;
 	}
 	ret = malloc(sizeof(char) * (i + 1));
 	if (!ret)
-		return NULL;
+		return (NULL);
 	i = 0;
 	while (s[i])
 	{
@@ -35,5 +35,5 @@ char *ft_strmap(char const *s, char (*f)(char))
 		i++;
 	}
 	ret[i] = '\0';
-	return ret;
+	return (ret);
 }

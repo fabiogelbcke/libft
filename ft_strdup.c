@@ -6,17 +6,17 @@
 /*   By: fschuber <fschuber@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/11/17 18:15:11 by fschuber          #+#    #+#             */
-/*   Updated: 2014/11/23 04:31:08 by fschuber         ###   ########.fr       */
+/*   Updated: 2014/11/28 19:43:21 by fschuber         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include <stdlib.h>
 
-char *ft_strdup(const char *s1)
+char		*ft_strdup(const char *s1)
 {
-	int i;
-	char *s2;
+	int		i;
+	char	*s2;
 
 	i = 0;
 	while (s1[i])
@@ -31,5 +31,5 @@ char *ft_strdup(const char *s1)
 		i++;
 	}
 	s2[i] = '\0';
-	return s2;
+	return (s2);
 }

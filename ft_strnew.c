@@ -6,20 +6,20 @@
 /*   By: fschuber <fschuber@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/11/21 07:33:33 by fschuber          #+#    #+#             */
-/*   Updated: 2014/11/21 08:14:11 by fschuber         ###   ########.fr       */
+/*   Updated: 2014/11/28 19:52:52 by fschuber         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 
-char *ft_strnew(size_t size)
+char		*ft_strnew(size_t size)
 {
-	char *str;
-	int i;
+	char	*str;
+	int		i;
 
 	str = (char*)malloc(((int)size + 1) * sizeof(char));
 	if (!str)
-		return NULL;
+		return (NULL);
 	i = 0;
 	while (i < (int)size)
 	{
@@ -27,5 +27,5 @@ char *ft_strnew(size_t size)
 		i++;
 	}
 	str[i] = '\0';
-	return str;
+	return (str);
 }

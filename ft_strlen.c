@@ -6,15 +6,15 @@
 /*   By: fschuber <fschuber@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/11/17 17:50:37 by fschuber          #+#    #+#             */
-/*   Updated: 2014/11/23 04:31:19 by fschuber         ###   ########.fr       */
+/*   Updated: 2014/11/28 19:49:32 by fschuber         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <string.h>
 
-size_t ft_strlen(const char *s)
+size_t		ft_strlen(const char *s)
 {
-	size_t i;
+	size_t	i;
 
 	i = 0;
 	while (*s)
@@ -22,5 +22,5 @@ size_t ft_strlen(const char *s)
 		s++;
 		i++;
 	}
-	return i;
+	return (i);
 }
