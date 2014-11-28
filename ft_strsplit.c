@@ -6,7 +6,7 @@
 /*   By: fschuber <fschuber@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/11/19 09:34:28 by fschuber          #+#    #+#             */
-/*   Updated: 2014/11/28 20:10:36 by fschuber         ###   ########.fr       */
+/*   Updated: 2014/11/28 20:35:02 by fschuber         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ static int	numberofwords(char const *s, char c)
 	return (n);
 }
 
-int			getsize(int *i, const char *s, char c, int size)
+static int	getsize(int *i, const char *s, char c, int size)
 {
 	while (s[*i] == c)
 		(*i)++;

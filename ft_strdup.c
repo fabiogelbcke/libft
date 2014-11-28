@@ -6,7 +6,7 @@
 /*   By: fschuber <fschuber@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/11/17 18:15:11 by fschuber          #+#    #+#             */
-/*   Updated: 2014/11/28 19:43:21 by fschuber         ###   ########.fr       */
+/*   Updated: 2014/11/28 20:32:50 by fschuber         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ char		*ft_strdup(const char *s1)
 	{
 		i++;
 	}
-	s2 = malloc(sizeof(char) * i + 1);
+	s2 = (char*)malloc(sizeof(char) * i + 1);
 	i = 0;
 	while (s1[i])
 	{

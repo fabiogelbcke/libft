@@ -6,14 +6,14 @@
 /*   By: fschuber <fschuber@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/11/21 07:58:46 by fschuber          #+#    #+#             */
-/*   Updated: 2014/11/28 19:28:22 by fschuber         ###   ########.fr       */
+/*   Updated: 2014/11/28 20:30:47 by fschuber         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 #include <stdio.h>
 
-void			numtostr(char **strptr, long int n, long int size)
+static void		numtostr(char **strptr, long int n, long int size)
 {
 	char		*str;
 

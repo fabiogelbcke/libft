@@ -6,7 +6,7 @@
 /*   By: fschuber <fschuber@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/11/19 08:40:38 by fschuber          #+#    #+#             */
-/*   Updated: 2014/11/28 19:50:23 by fschuber         ###   ########.fr       */
+/*   Updated: 2014/11/28 20:33:49 by fschuber         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ char		*ft_strmap(char const *s, char (*f)(char))
 	{
 		i++;
 	}
-	ret = malloc(sizeof(char) * (i + 1));
+	ret = (char*)malloc(sizeof(char) * (i + 1));
 	if (!ret)
 		return (NULL);
 	i = 0;
